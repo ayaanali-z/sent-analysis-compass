@@ -5,7 +5,7 @@ import re
 word_group_palestine = ['palestine', 'palestinian', 'palestinians', 'arab', 'anti-palestinian', 'anti-palestine', 'anti-arab', 'gaza', 'gazan', 'gazans']
 word_group_israel = ['israel', 'israeli', 'israelis', 'anti-israel', 'anti-israeli']
 word_group_antisemitism = ['jewish', 'jew', 'jews', 'antisemitism', 'antisemitic', 'anti-jewish', 'anti-zionism']
-word_group_islamophobia = ['muslim', 'muslims','anti-muslim', 'islamophobia', 'islamophobic', 'doxxing', 'doxing', 'doxxed', 'doxed', 'dox']
+word_group_islamophobia = ['muslim', 'muslims','anti-muslim', 'islamophobia', 'islamophobic']
 # to make an alternative graph, remove "doxxing" and its variants from last word group 
 
 def count_words(text, word_group):
@@ -29,10 +29,7 @@ def process_file(file_path):
     antisemitism_count = count_words(text, word_group_antisemitism)
     islamophobia_count = count_words(text, word_group_islamophobia)
 
-    y_point = israel_count - palestine_count
-    x_point = antisemitism_count - islamophobia_count
-
-    return y_point, x_point
+    return israel_count, palestine_count, antisemitism_count, islamophobia_count
 
 def process_all_files(folder_path):
     """
@@ -42,13 +39,13 @@ def process_all_files(folder_path):
     for file in os.listdir(folder_path):
         if file.endswith('.txt'):
             file_path = os.path.join(folder_path, file)
-            y_point, x_point = process_file(file_path)
+            israel_count, palestine_count, antisemitism_count, islamophobia_count = process_file(file_path)
             admin_name = os.path.splitext(file)[0] # assume .txt name is the last name of the administrator
-            results.append([admin_name, y_point, x_point])
+            results.append([admin_name, israel_count, palestine_count, antisemitism_count, islamophobia_count])
 
-    with open('compass_doxxed.csv', 'w', newline='', encoding='utf-8') as csvfile: # used csv module instead of pandas
+    with open('new_data_lol.csv', 'w', newline='', encoding='utf-8') as csvfile: # used csv module instead of pandas
         writer = csv.writer(csvfile)
-        writer.writerow(['Administrator', 'State-related (Y-axis)', 'Religous-related (X-axis)'])
+        writer.writerow(['Administrator', 'Israel-related', 'Palestine-related', 'Antisemitism-related', 'Islamophobia-related'])
         writer.writerows(results)
 
 folder_path = 'emails'
