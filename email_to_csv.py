@@ -4,8 +4,8 @@ import re
 
 word_group_palestine = ['palestine', 'palestinian', 'palestinians', 'arab', 'anti-palestinian', 'anti-palestine', 'anti-arab', 'gaza', 'gazan', 'gazans']
 word_group_israel = ['israel', 'israeli', 'israelis', 'anti-israel', 'anti-israeli']
-word_group_antisemitism = ['jewish', 'jew', 'jews', 'antisemitism', 'antisemitic', 'anti-jewish']
-word_group_islamophobia = ['muslim', 'muslims','anti-muslim', 'islamophobia', 'doxxing', 'doxing', 'doxxed', 'doxed', 'dox']
+word_group_antisemitism = ['jewish', 'jew', 'jews', 'antisemitism', 'antisemitic', 'anti-jewish', 'anti-zionism']
+word_group_islamophobia = ['muslim', 'muslims','anti-muslim', 'islamophobia', 'islamophobic', 'doxxing', 'doxing', 'doxxed', 'doxed', 'dox']
 # to make an alternative graph, remove "doxxing" and its variants from last word group 
 
 def count_words(text, word_group):
@@ -46,7 +46,7 @@ def process_all_files(folder_path):
             admin_name = os.path.splitext(file)[0] # assume .txt name is the last name of the administrator
             results.append([admin_name, y_point, x_point])
 
-    with open('compass.csv', 'w', newline='', encoding='utf-8') as csvfile: # used csv module instead of pandas
+    with open('compass_doxxed.csv', 'w', newline='', encoding='utf-8') as csvfile: # used csv module instead of pandas
         writer = csv.writer(csvfile)
         writer.writerow(['Administrator', 'State-related (Y-axis)', 'Religous-related (X-axis)'])
         writer.writerows(results)

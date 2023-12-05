@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-file_path = 'compass.csv'
+file_path = 'compass_doxxed.csv'
 data = pd.read_csv(file_path)
 
 plt.figure(figsize=(12, 10))
@@ -17,12 +17,12 @@ for i in range(len(data)):
 plt.axhline(0, color='black', linewidth=1)
 plt.axvline(0, color='black', linewidth=1)
 
-plt.title('CU/BC Admin on mentions', fontsize=14)
+plt.title('Difference of mentions of specific terms per CU/BC Administrator', fontsize=14)
 plt.xlabel('(Anti-Semitism-related - Islamophobia-related)', fontsize=12)
 plt.ylabel('Israel-related - Palestine-related', fontsize=12)
 
 plt.grid(True, which='both', linestyle='--', linewidth=0.5)
 
-plt.savefig('political_compass.svg', format='svg', bbox_inches='tight', facecolor='w')
+plt.savefig('political_compass_two.svg', format='svg', bbox_inches='tight', facecolor='w')
 
 plt.show()
