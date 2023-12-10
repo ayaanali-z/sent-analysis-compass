@@ -8,7 +8,9 @@ Below are the groupings:
 ```
 # word_group_israel = ['israel', 'israeli', 'israelis', 'anti-israel', 'anti-israeli',
 'anti-zionism']
-# word_group_palestine = ['palestine', 'palestinian', 'palestinians', 'arab', 'anti-palestinian', 'anti-palestine', 'anti-arab', 'gaza', 'gazan', 'gazans']
+# word_group_palestine = ['palestine', 'palestinian', 'palestinians', 'arab', 'anti-palestinian',
+'anti-palestine', 'anti-arab', 'gaza', 'gazan', 'gazans']
 # word_group_antisemitism = ['jewish', 'jew', 'jews', 'antisemitism', 'antisemitic', 'anti-jewish’]
-# word_group_islamophobia = ['muslim', 'muslims','anti-muslim', 'islamophobia', 'islamophobic', 'doxxing', 'doxing', 'doxxed', 'doxed', 'dox']
+# word_group_islamophobia = ['muslim', 'muslims','anti-muslim', 'islamophobia', 'islamophobic',
+'doxxing', 'doxing', 'doxxed', 'doxed', 'dox']
 ```
