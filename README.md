@@ -1,5 +1,5 @@
-# Code and Data for Sentiment Analysis Compass
-This repository includes the code, data, and methodology for the creation of the graphic in this Columbia Spectator [article](https://www.columbiaspectator.com/news/2023/12/09/campus-discourse-through-university-administrators-words/).
+# About
+This repository includes the code, data, and methodology for the creation of the compass graphic in this Columbia Spectator [article](https://www.columbiaspectator.com/news/2023/12/09/campus-discourse-through-university-administrators-words/).
 
 # Word Categories
 As mentioned in the article, certain words were grouped under specific categories and labels. Note that all .txt files were converted to lowercase.
